@@ -72,7 +72,7 @@ struct node *insertPos(struct node *userNode, int data, int pos)
         ptr = ptr->next;
         i++;
     }
-    if (i >= pos)
+    if (i >= pos || ptr == NULL)
     {
         printf("Invalid Position\n");
         return userNode;
@@ -321,5 +321,6 @@ int main()
     myNode = insertBefore(myNode, 2, 40);
     myNode = deleteAfter(myNode, 45);
     myNode = deleteAfter(myNode, 5);
+    myNode = insertPos(myNode, 5, 1);
     display(myNode);
 }
